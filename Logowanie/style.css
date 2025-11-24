@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center;     /* pionowe wyśrodkowanie */
+  background: #f0f0f0;
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column; /* elementy jeden pod drugim */
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button#toggle-password {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: rgb(0, 17, 255);
+  text-align: left;
+  margin-top: 5px; /* odstęp od pola hasła */
+  cursor: pointer;
+}
