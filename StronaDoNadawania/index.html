@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadawanie adresu MAC</title>
+  <!-- podłączenie CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Nadawanie adresu MAC</h1>
+      <div class="sub">Powiąż nazwę urządzenia i numer seryjny z adresem MAC. Dane zapisywane są lokalnie w przeglądarce.</div>
+    </header>
+
+    <div class="grid">
+      <!-- FORMULARZ -->
+      <section class="card">
+        <h2>Formularz urządzenia</h2>
+        <div class="row">
+          <div>
+            <label>Nazwa urządzenia</label>
+            <input id="name" type="text" placeholder="Np. Router biuro" />
+          </div>
+          <div>
+            <label>Numer seryjny</label>
+            <input id="serial" type="text" placeholder="Np. SN12345678" />
+          </div>
+        </div>
+
+        <div>
+          <label>Adres MAC</label>
+          <input id="mac" type="text" placeholder="AA:BB:CC:DD:EE:FF" />
+          <div class="hint">Akceptowany format: XX:XX:XX:XX:XX:XX lub XX-XX-XX-XX-XX-XX.</div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="saveBtn">Zapisz</button>
+          <button class="secondary" id="generateBtn">Generuj losowy MAC</button>
+          <button id="clearFormBtn">Wyczyść formularz</button>
+        </div>
+
+        <div id="formMsg"></div>
+      </section>
+
+      <!-- LISTA -->
+      <section class="card">
+        <h2>Lista urządzeń</h2>
+        <div class="controls">
+          <input id="search" type="text" placeholder="Szukaj..." />
+          <span class="pill" id="countPill">0 pozycji</span>
+          <button id="exportBtn">Eksportuj JSON</button>
+          <button id="importBtn">Importuj JSON</button>
+          <input id="importFile" type="file" accept="application/json" style="display:none;" />
+          <button id="clearAllBtn" class="danger">Wyczyść wszystko</button>
+        </div>
+
+        <table class="table" id="devicesTable">
+          <thead>
+            <tr>
+              <th>Nazwa</th>
+              <th>Numer seryjny</th>
+              <th>Adres MAC</th>
+              <th>Akcje</th>
+            </tr>
+          </thead>
+          <tbody id="devicesBody">
+            <tr><td colspan="4" class="empty">Brak danych.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="footer">Dane zapisywane są w localStorage.</div>
+  </div>
+
+  <!-- podłączenie JS -->
+  <script src="script.js"></script>
+</body>
+</html>
